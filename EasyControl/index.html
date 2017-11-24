@@ -32,8 +32,8 @@
 					<td><font color="blue"><b>blue</b></font></td>
 				</tr>
 				<tr style="text-align: center;">
-					<td id="redvalue">255</td>
-					<td id="greenvalue">250</td>
+					<td id="redvalue">0</td>
+					<td id="greenvalue">255</td>
 					<td id="bluevalue">0</td>
 				</tr>
 				<tr>
@@ -80,9 +80,9 @@
 		
 		document.getElementById("showcolor").style.backgroundColor = 'rgb(' + Rled + ',' + Gled + ',' + Bled + ')';
 		
-		if(cpf){
+		//if(cpf){
 			cpf.setChainableLed("0," + Rled + "," + Gled + "," + Bled + ";");
-		}
+		//}
 		
 	}
 	
