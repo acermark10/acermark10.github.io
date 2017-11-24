@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>xxxEasy Control</title>
+<title>Easy Control</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="main.css">
@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">xxxEasy Control</font><p><br>
+<font id="title">xxxEasy Controlxxx</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -33,7 +33,7 @@
 				</tr>
 				<tr style="text-align: center;">
 					<td id="redvalue">0</td>
-					<td id="greenvalue">255</td>
+					<td id="greenvalue">0</td>
 					<td id="bluevalue">0</td>
 				</tr>
 				<tr>
@@ -80,9 +80,9 @@
 		
 		document.getElementById("showcolor").style.backgroundColor = 'rgb(' + Rled + ',' + Gled + ',' + Bled + ')';
 		
-		//if(cpf){
+		if(cpf){
 			cpf.setChainableLed("0," + Rled + "," + Gled + "," + Bled + ";");
-		//}
+		}
 		
 	}
 	
