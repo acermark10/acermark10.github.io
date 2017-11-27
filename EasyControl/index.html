@@ -65,10 +65,11 @@
 	
 			lightdata = cpf.get("light sensor");
 			tempdata = cpf.get("temperature sensor");
+			recdata = cpf.get("Speech Rec Result");
 			celsius = toCelsius(tempdata);	
 			document.getElementById("lightvalue").innerHTML = lightdata;
 			document.getElementById("temperaturevalue").innerHTML = celsius;
-			
+			document.getElementById("GoogleSpeech").innerHTML = recdata;
 		}
 		setTimeout(loop, 1000);
 	}
