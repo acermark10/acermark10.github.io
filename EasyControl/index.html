@@ -112,16 +112,17 @@
 		if(cpf)
 			cpf.initGoogleSpeech(); 
 	}
-	//initGoogleSpeech();
+	initGoogleSpeech();
 	
 	// Get Google Speech Listener Status
 	function getGSListenStatus() {
 
 		var x = "xxx";
+		
+		var y = document.getElementById("GoogleSpeech").value;
 		document.getElementById("title").innerHTML = "YYYYYYYYYY";
-		cpf.getGSListenStatus(x); 
+		cpf.getGSListenStatus(y); 
         }
-	//getGSListenStatus();
 	
 </script>
 </body>
