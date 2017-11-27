@@ -114,6 +114,13 @@
 	}
 	initGoogleSpeech();
 	
+	// Get Google Speech Listener Status
+	function getGSListenStatus() {
+		var x = document.getElementById("title").value;
+		cpf.getGSListenStatus(x); 
+        }
+	getGSListenStatus();
+	
 </script>
 </body>
 </html>
