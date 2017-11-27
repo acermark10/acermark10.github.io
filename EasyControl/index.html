@@ -28,12 +28,7 @@
 				<span class="analogvalue" id="temperaturevalue">none</span>
 			</div>
 		</div>
-		<p>
-		<p>
-		<p>
-		<p>
-		<p>
-		<p>
+
 		<div id="rgb" class="col-sm-6 col-xs-12">
 			<img class="rgbled" src="img/rgb.png" />
 			<table style="margin: 0 auto; margin-top: 10px;">
@@ -111,6 +106,13 @@
 			cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1,"INPUT"],["grove_newChainableLED", 7, 8, 1]'); 
 			//document.getElementById("demo").innerHTML += ret + "<br>";
 	}
+	
+	// Init Google Speech
+	function initGoogleSpeech(){
+		if(cpf)
+			cpf.initGoogleSpeech(); 
+	}
+	
 	
 </script>
 </body>
