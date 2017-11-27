@@ -65,7 +65,7 @@
 	
 			lightdata = cpf.get("light sensor");
 			tempdata = cpf.get("temperature sensor");
-			recdata = cpf.get("Speech Rec Result");
+			recdata = cpf.get("Speech Rec Result", 1);
 			celsius = toCelsius(tempdata);	
 			document.getElementById("lightvalue").innerHTML = lightdata;
 			document.getElementById("temperaturevalue").innerHTML = celsius;
@@ -123,6 +123,11 @@
 		var y = document.getElementById("GoogleSpeech").value;
 		document.getElementById("title").innerHTML = "YYYYYYYYYY";
 		cpf.getGSListenStatus(y); 
+        }
+	
+	// Set Google Speech Recog Result
+	function SetGSRecResult(var Result) {
+		document.getElementById("GoogleSpeech").innerHTML = Result;
         }
 	
 </script>
