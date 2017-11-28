@@ -117,24 +117,13 @@
 			cpf.initSpeechRecognition(); 
 	}
 	initSpeechRecognition();
-	
-	// Get Listener Status
-	function getListenStatus() {
-
-		var x = "xxx";
 		
-		var y = document.getElementById("Recog-icon").value;
-		document.getElementById("title").innerHTML = "YYYYYYYYYY";
-		cpf.getListenStatus(y); 
-        }
-	
 	// Set Listener Status
 	function SetRecognitionListenStatus(Status) {
+		var x = document.getElementById("RecListen");
 		if(Status == "true"){
-			var x = document.getElementById("RecListen");
 			x.style.color="red";
 		} else {
-			var x = document.getElementById("RecListen");
 			x.style.color="gray";
         	}
 	}
