@@ -130,10 +130,10 @@
 	
 	// Set Listener Status
 	function SetRecognitionListenStatus(Status) {
-		if(Status == true)
-			document.getElementById("analog").color = "red";
+		if(Status)
+			document.getElementById("StringFont").innerHTML='<font color="red"></font>';
 		else
-			document.getElementById("analog").color = "black";
+			document.getElementById("StringFont").innerHTML='<font color="gray"></font>';
         }
 	
 	// Set Recognition Result
