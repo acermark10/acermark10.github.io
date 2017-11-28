@@ -17,8 +17,8 @@
 				<td><font id="RecListen" color="gray"><b>Listening</b></font></td>
 				</tr>
 			<div class="analogclass">
-				<img class="analogsensor" src="img/Google-speech.jpg" />
-				<span class="analogvalue" id="GoogleSpeech">none</span><br>
+				<img class="analogsensor" src="img/Recog-icon.jpg" />
+				<span class="analogvalue" id="Recog-icon">none</span><br>
 			</div>
 			<p>	
 			<div class="analogclass">
@@ -123,22 +123,17 @@
 
 		var x = "xxx";
 		
-		var y = document.getElementById("GoogleSpeech").value;
+		var y = document.getElementById("Recog-icon").value;
 		document.getElementById("title").innerHTML = "YYYYYYYYYY";
 		cpf.getListenStatus(y); 
         }
 	
 	// Set Listener Status
 	function SetRecognitionListenStatus(Status) {
-		document.getElementById("title").innerHTML = "AAAAAAAAA";
 		if(Status == "true"){
-			document.getElementById("title").innerHTML = "BBBBBBBBBBb";
-			//document.getElementById("RecListen").innerHTML='<font color="red"></font>';
 			var x = document.getElementById("RecListen");
 			x.style.color="red";
 		} else {
-			document.getElementById("title").innerHTML = "CCCCCCCCCCCCCC";
-			//document.getElementById("RecListen").innerHTML='<font color="gray"></font>';
 			var x = document.getElementById("RecListen");
 			x.style.color="gray";
         	}
@@ -146,7 +141,7 @@
 	
 	// Set Recognition Result
 	function SetRecognizeResult(Result) {
-		document.getElementById("GoogleSpeech").innerHTML = Result;
+		document.getElementById("Recog-icon").innerHTML = Result;
         }
 	
 </script>
