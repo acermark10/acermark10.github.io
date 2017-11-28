@@ -130,11 +130,15 @@
 	
 	// Set Listener Status
 	function SetRecognitionListenStatus(Status) {
-		if(Status)
+		document.getElementById("title").innerHTML = "AAAAAAAAA";
+		if(Status){
+			document.getElementById("title").innerHTML = "BBBBBBBBBBb";
 			document.getElementById("StringFont").innerHTML='<font color="red"></font>';
-		else
+		} else {
+			document.getElementById("title").innerHTML = "CCCCCCCCCCCCCC";
 			document.getElementById("StringFont").innerHTML='<font color="gray"></font>';
-        }
+        	}
+	}
 	
 	// Set Recognition Result
 	function SetRecognizeResult(Result) {
