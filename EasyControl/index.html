@@ -108,25 +108,25 @@
 			//document.getElementById("demo").innerHTML += ret + "<br>";
 	}
 	
-	// Init Google Speech
-	function initGoogleSpeech(){
+	// Init Speech Recognition
+	function initSpeechRecognition(){
 		if(cpf)
-			cpf.initGoogleSpeech(); 
+			cpf.initSpeechRecognition(); 
 	}
-	initGoogleSpeech();
+	initSpeechRecognition();
 	
-	// Get Google Speech Listener Status
-	function getGSListenStatus() {
+	// Get Listener Status
+	function getListenStatus() {
 
 		var x = "xxx";
 		
 		var y = document.getElementById("GoogleSpeech").value;
 		document.getElementById("title").innerHTML = "YYYYYYYYYY";
-		cpf.getGSListenStatus(y); 
+		cpf.getListenStatus(y); 
         }
 	
-	// Set Google Speech Recog Result
-	function SetGSRecResult(Result) {
+	// Set Recognition Result
+	function SetRecResult(Result) {
 		document.getElementById("GoogleSpeech").innerHTML = Result;
         }
 	
