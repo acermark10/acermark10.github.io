@@ -129,13 +129,16 @@
         }
 	
 	// Set Listener Status
-	function SetListenStatus() {
-		document.getElementById("GoogleSpeech").innerHTML = Result;
+	function SetListenStatus(Status) {
+		if(Status == true)
+			document.getElementById("analog").color = "red";
+		else
+			document.getElementById("analog").color = "black";
         }
 	
 	// Set Recognition Result
 	function SetRecResult(Result) {
-		document.getElementById("analog").color = "red";
+		document.getElementById("GoogleSpeech").innerHTML = Result;
         }
 	
 </script>
