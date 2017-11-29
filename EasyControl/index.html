@@ -119,7 +119,7 @@
 	initSpeechRecognition();
 		
 	// Set Listener Status
-	function SetRecognitionListenStatus(Status) {
+	function GetRecognitionListenStatus(Status) {
 		var x = document.getElementById("RecListen");
 		if(Status == "true"){
 			x.style.color="red";
@@ -129,7 +129,7 @@
 	}
 	
 	// Set Recognition Result
-	function SetRecognizeResult(Result) {
+	function GetRecognizeResult(Result) {
 		//document.getElementById("Recog-icon").innerHTML = Result;
 		var x = document.getElementById("Recog-icon");
 		x.innerHTML = Result;
