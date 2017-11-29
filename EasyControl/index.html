@@ -89,7 +89,7 @@
 		document.getElementById("bluevalue").innerHTML = Bled;
 		
 		document.getElementById("showcolor").style.backgroundColor = 'rgb(' + Rled + ',' + Gled + ',' + Bled + ')';
-		
+	
 		if(cpf){
 			cpf.setChainableLed("0," + Rled + "," + Gled + "," + Bled + ";");
 		}
@@ -107,7 +107,7 @@
 	// cpf setup
 	function setup(){
 		if(cpf)
-			cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1,"INPUT"],["grove_newChainableLED", 7, 8, 1]'); 
+			cpf.setPinMode('["resetPin"],["setPinMode", "analog", 0, "INPUT"],["setPinMode", "analog", 1,"INPUT"],["setPinMode", "digital", 2,"OUTPUT"],["grove_newChainableLED", 7, 8, 1]'); 
 			//document.getElementById("demo").innerHTML += ret + "<br>";
 	}
 	
@@ -133,6 +133,16 @@
 		//document.getElementById("Recog-icon").innerHTML = Result;
 		var x = document.getElementById("Recog-icon");
 		x.innerHTML = Result;
+               if(!Result.localeCompare("light up")){
+	       	if(cpf){
+		cpf.request('["digitalWrite", 2 , 1]'); // turn on 
+		}
+	       } else {
+	       	if(cpf){
+		cpf.request('["digitalWrite", 2 , 0]'); // turn off 
+		}
+	       }
+		 
         }
 	
 </script>
