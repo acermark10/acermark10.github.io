@@ -118,7 +118,7 @@
 	}
 	initSpeechRecognition();
 		
-	// Set Listener Status
+	// Get Listener Status
 	function GetRecognitionListenStatus(Status) {
 		var x = document.getElementById("RecListen");
 		if(Status == "true"){
@@ -128,24 +128,30 @@
         	}
 	}
 	
-	// Set Recognition Result
+	// Get Recognition Result
 	function GetRecognizeResult(Result) {
-		//document.getElementById("Recog-icon").innerHTML = Result;
-		var x = document.getElementById("Recog-icon");
-		x.innerHTML = Result;
-               if(!Result.localeCompare("ABC")){
-	       	if(cpf){
-		cpf.request('["digitalWrite", 2 , 1]'); // turn on 
-			document.getElementById("title").innerHTML = "true";
-		}
-	       } else {
-	       	if(cpf){
-		cpf.request('["digitalWrite", 2 , 0]'); // turn off 
-			document.getElementById("title").innerHTML = "off";
-		}
+		document.getElementById("Recog-icon").innerHTML = Result;
+		//var x = document.getElementById("Recog-icon");
+		//x.innerHTML = Result;
+               	if(!Result.localeCompare("ABC")) {
+	       		if(cpf) {
+				cpf.request('["digitalWrite", 2 , 1]'); // turn on 
+				document.getElementById("title").innerHTML = "true";
+			}
+	       	} else {
+	       		if(cpf) {
+				cpf.request('["digitalWrite", 2 , 0]'); // turn off 
+				document.getElementById("title").innerHTML = "off";
+			}
 	       }
-		 
         }
+	
+	// Set the recognize language
+	function SetRecognizeLang(SelectedLang) {
+		if(cpf)
+		cpf.SetRecognizeLang(SelectedLang); 
+	}
+	//SetRecognizeLang("ja-JP")
 	
 </script>
 </body>
