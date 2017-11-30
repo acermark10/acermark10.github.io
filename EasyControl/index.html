@@ -133,7 +133,7 @@
 		document.getElementById("Recog-icon").innerHTML = Result;
 		//var x = document.getElementById("Recog-icon");
 		//x.innerHTML = Result;
-               	if(!Result.localeCompare("ABC")) {
+               	if(!Result.localeCompare("ABC") || !Result.localeCompare("abc")) {
 	       		if(cpf) {
 				cpf.request('["digitalWrite", 2 , 1]'); // turn on 
 				document.getElementById("title").innerHTML = "true";
