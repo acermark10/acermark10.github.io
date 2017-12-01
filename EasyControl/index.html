@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlii</font><p><br>
+<font id="title">Easy Controljj</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -122,8 +122,8 @@
 	function GetRecognitionListenStatus(Status) {
 		var x = document.getElementById("RecListen");
 		if(Status == "true"){
-			//document.getElementById("AnswerBox").innerHTML='2';
-			x.style.innerHTML="Listening...";
+			document.getElementById("RecListen").innerHTML='Listening...';
+			//x.style.innerHTML="Listening...";
 			x.style.color="red";
 		} else {
 			x.style.color="gray";
