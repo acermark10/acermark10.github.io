@@ -129,14 +129,15 @@
 	}
 	
 	// Get Recognition Result
-	function GetRecognizeResult(Result, type) {
+	function GetRecognizeResult(Result, Type) {
 		//document.getElementById("Recog-icon").innerHTML = Result;
+		document.getElementById("title").innerHTML = "GetRecognizeResult";
 		var x = document.getElementById("Recog-icon");
 		x.innerHTML = Result;
                	if(!Result.localeCompare("abc")) {
 	       		if(cpf) {
 				cpf.request('["digitalWrite", 2 , 1]'); // turn on 
-				document.getElementById("title").innerHTML = type;
+				document.getElementById("title").innerHTML = Type;
 			}
 	       	} else {
 	       		if(cpf) {
