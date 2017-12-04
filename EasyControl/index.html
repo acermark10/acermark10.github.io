@@ -182,12 +182,12 @@
 	function SetColorLight() {
 		console.log('SetColorLight);
 		var col = colourRandom();
-  		if(col.charAt(0) == '#')
-		     col = col.substr(1);
+		
+		if(col.charAt(0) == '#')
+			col = col.substr(1);
 		r = parseInt(col.charAt(0)+col.charAt(1), 16);
 		g = parseInt(col.charAt(2)+col.charAt(3), 16);
 		b = parseInt(col.charAt(4)+col.charAt(5), 16);
-
 		cpf.set("rgb led", r, g, b);
 		cpf.sleep(2000); 
 		cpf.repeat();
