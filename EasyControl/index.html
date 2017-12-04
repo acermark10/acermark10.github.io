@@ -157,8 +157,10 @@
 		
 		// sing little star
 		if(!Result.localeCompare("小星星")) {
-			
-			cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300]'); 
+			if(cof) {
+				SetColorLight();
+				cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300]'); 
+			}
 		}
 		
 		
@@ -170,6 +172,26 @@
 			cpf.SetRecognizeLang(SelectedLang); 
 	}
 	//SetRecognizeLang("ja-JP")
+	
+	// colorful light
+	function colourRandom() {
+  		var num = Math.floor(Math.random() * Math.pow(2, 24));
+  		return '#' + ('00000' + num.toString(16)).substr(-6);
+	}
+	
+	function SetColorLight() {
+		var col = colourRandom();
+  		if(col.charAt(0) == '#')
+		     col = col.substr(1);
+		r = parseInt(col.charAt(0)+col.charAt(1), 16);
+		g = parseInt(col.charAt(2)+col.charAt(3), 16);
+		b = parseInt(col.charAt(4)+col.charAt(5), 16);
+
+		cpf.set("rgb led", r, g, b);
+		cpf.sleep(2000); 
+		cpf.repeat();
+	}
+	
 	
 </script>
 </body>
