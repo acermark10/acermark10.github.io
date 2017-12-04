@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlss</font><p><br>
+<font id="title">Easy Controltt</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -196,15 +196,15 @@
 				//cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
 				//var why ='["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]';
 				//console.log('old = ' + why);
-				var m = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
-				var n = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
-				var o = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
+				int m = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
+				int n = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
+				int o = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
 				console.log('m = ' + m);
 				console.log('n = ' + n);
 				console.log('o = ' + o);
 				//cpf.request('["grove_setColorRGB", 0, m, n, o], ["tone_play", 6, 261, 300], ["sleep", 300],["grove_setColorRGB", 0, n, m, o], ["tone_play", 6, 261, 300], ["sleep", 300], ["grove_setColorRGB", 0, o, o, n],["tone_play", 6, 392, 300],["sleep", 300],["grove_setColorRGB", 0, m, n, m],["tone_play", 6, 392, 300],["sleep", 300],["grove_setColorRGB", 0, n, o, o],["tone_play", 6, 440, 300], ["sleep", 300], ["grove_setColorRGB", 0, o, n, m], ["tone_play", 6, 440, 300],["sleep", 300], ["grove_setColorRGB", 0, m, n, m], ["tone_play", 6, 392, 300],["sleep", 500]'); 
  
-				cpf.request('["grove_setColorRGB", 0, m, n, o],["tone_play", 6, 261, 300],["sleep", 300],["grove_setColorRGB", 0, 255, 0, 0],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
+				cpf.request('["grove_setColorRGB", 0, m, n, o],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, 255, 0, 0],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
 				
 				//correct
 				cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
