@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlmm</font><p><br>
+<font id="title">Easy Controlnn</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -197,9 +197,11 @@
 				//var why ='["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]';
 				//console.log('old = ' + why);
 				var n = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
+				console.log('n = ' + n);
 				cpf.request('["grove_setColorRGB", 0, n, n, n], ["tone_play", 6, 261, 300],["sleep", 300],["grove_setColorRGB", 0, n, n, n],["tone_play", 6, 261, 300],["sleep", 300], ["grove_setColorRGB", 0, n, n, n],["tone_play", 6, 392, 300],["sleep", 300],["grove_setColorRGB", 0, n, n, n],["tone_play", 6, 392, 300],["sleep", 300],["grove_setColorRGB", 0, n, n, n],["tone_play", 6, 440, 300],["sleep", 300],["grove_setColorRGB", 0, n, n, n],["tone_play", 6, 440, 300],["sleep", 300],["grove_setColorRGB", 0, n, n, n],["tone_play", 6, 392, 300],["sleep", 500]'); 
-				var n = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
-				cpf.request('["grove_setColorRGB", 0, n, n, n], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 500]'); 
+				var m = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
+				console.log('m = ' + m);
+				cpf.request('["grove_setColorRGB", 0, m, m, m], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 500]'); 
 				cpf.request('["grove_setColorRGB", 0, n, n, n], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 500]'); 
 				cpf.request('["grove_setColorRGB", 0, 200, 0, 0], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 500]'); 
 				cpf.request('["grove_setColorRGB", 0, 0, 200, 0], ["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
