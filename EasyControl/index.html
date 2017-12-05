@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Control</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -226,6 +226,7 @@
 			SetRecognizeLang("zh-TW")
 			document.getElementById("title").innerHTML = Result;
 		} else if(Result.includes("關閉朗讀")) {
+			cpf.sleep(500);
 			SetSpeech("off")
 		} else if(!Result.localeCompare("朗讀")) {
 			SetSpeech("on")
