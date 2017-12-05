@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Controlbb</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -112,6 +112,7 @@
 		if(cpf)
 			cpf.setPinMode('["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1,"INPUT"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["grove_newChainableLED", 7, 8, 1]'); 
 			//document.getElementById("demo").innerHTML += ret + "<br>";
+		console.log('setup completed ');
 	}
 	
 	// Init Speech Recognition
@@ -131,7 +132,7 @@
 		console.log('g = ' + g);
 		console.log('b = ' + b);
 		cpf.request('["grove_setColorRGB", 0, r, g, b],["sleep", 300], ["grove_setColorRGB", 0, 0, 255, 255]');
-		//cpf.request('["grove_setColorRGB", 0, 255, 255, 255]'); 
+		cpf.request('["grove_setColorRGB", 0, 255, 255, 255]'); 
 		//if(cpf)
 		//	cpf.initSpeechRecognition(); 
 	}
