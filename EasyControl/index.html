@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlff</font><p><br>
+<font id="title">Easy Controlgg</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -146,17 +146,17 @@
 
 		var x = document.getElementById("Recog-icon");
 		x.innerHTML = Result;
-               	if(!Result.localeCompare("abc")) {
+               	if(Result.includes("開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
 				cpf.request('["digitalWrite", 2 , 1]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on light";
 			}
-	       	} else if (!Result.localeCompare("turn off")) {
+	       	} else if (Result.includes("turn off") || Result.includes("關燈")) {
 	       		if(cpf) {
 				cpf.request('["digitalWrite", 2 , 0]'); // turn off 
 				document.getElementById("title").innerHTML = "Turn off light";
 			}
-	       	} else if(!Result.localeCompare("小星星")) { // Sing little star
+	       	} else if(Result.includes("小星星")) { // Sing little star
 			console.log('Sing ' + Result);
 			document.getElementById("title").innerHTML = Result;
 			if(cpf) {
@@ -195,10 +195,13 @@
 			}
 		} else if(Result.includes("切換日文") || Result.includes("switch jp")) {
 			SetRecognizeLang("ja-JP")
+			document.getElementById("title").innerHTML = Result;
 		} else if(Result.includes("切換英文") || Result.includes("アメリカ")) {
 			SetRecognizeLang("en-US")
+			document.getElementById("title").innerHTML = Result;
 		} else if(Result.includes("switch tw") || Result.includes("台湾")) {
 			SetRecognizeLang("zh-TW")
+			document.getElementById("title").innerHTML = Result;
 		} else if(Result.includes("朗讀")) {
 			SetSpeech("on")
 		} else if(Result.includes("關閉朗讀")) {
