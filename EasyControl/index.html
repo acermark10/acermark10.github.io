@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlvv</font><p><br>
+<font id="title">Easy Controlaa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -116,8 +116,19 @@
 	
 	// Init Speech Recognition
 	function initSpeechRecognition(){
-		if(cpf)
-			cpf.initSpeechRecognition(); 
+		var col = colourRandom();
+		console.log('col = ' + col);
+		
+		if(col.charAt(0) == '#')
+			col = col.substr(1);
+		r = parseInt(col.charAt(0)+col.charAt(1), 16);
+		g = parseInt(col.charAt(2)+col.charAt(3), 16);
+		b = parseInt(col.charAt(4)+col.charAt(5), 16);
+		
+		cpf.request('["grove_setColorRGB", 0, r, g, b],["grove_setColorRGB", 0, r, g, b]');
+		
+		//if(cpf)
+		//	cpf.initSpeechRecognition(); 
 	}
 	initSpeechRecognition();
 		
@@ -204,15 +215,15 @@
 				console.log('o = ' + o);
 				//cpf.request('["grove_setColorRGB", 0, m, n, o], ["tone_play", 6, 261, 300], ["sleep", 300],["grove_setColorRGB", 0, n, m, o], ["tone_play", 6, 261, 300], ["sleep", 300], ["grove_setColorRGB", 0, o, o, n],["tone_play", 6, 392, 300],["sleep", 300],["grove_setColorRGB", 0, m, n, m],["tone_play", 6, 392, 300],["sleep", 300],["grove_setColorRGB", 0, n, o, o],["tone_play", 6, 440, 300], ["sleep", 300], ["grove_setColorRGB", 0, o, n, m], ["tone_play", 6, 440, 300],["sleep", 300], ["grove_setColorRGB", 0, m, n, m], ["tone_play", 6, 392, 300],["sleep", 500]'); 
  
-				cpf.request('["tone_play", 6, 261, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, 255, 0, 0], ["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
+				cpf.request('["tone_play", 6, 261, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, 255, 0, 0], ["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 500]'); 
 				
 				//correct
-				cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
-				cpf.request('["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 500]'); 
-				cpf.request('["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 500]'); 
-				cpf.request('["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 500]'); 
-				cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
-				cpf.request('["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 500]'); 
+				//cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
+				//cpf.request('["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 500]'); 
+				//cpf.request('["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 500]'); 
+				//cpf.request('["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 500]'); 
+				//cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
+				//cpf.request('["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 500]'); 
 				//SetColorLight();
 				
 			}
