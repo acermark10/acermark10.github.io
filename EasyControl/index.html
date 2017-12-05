@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controldd</font><p><br>
+<font id="title">Easy Controlee</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -199,6 +199,10 @@
 			SetRecognizeLang("en-US")
 		} else if(Result.includes("switch tw") || Result.includes("台湾")) {
 			SetRecognizeLang("zh-TW")
+		} else if(Result.includes("朗讀")) {
+			SetSpeech("on")
+		} else if(Result.includes("關閉朗讀")) {
+			SetSpeech("off")
 		} else {
 			document.getElementById("title").innerHTML = "Easy Control";
 		}
