@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlhh</font><p><br>
+<font id="title">Easy Controlii</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -200,9 +200,9 @@
 			}
 		} else if(Result.includes("切換日文") || Result.includes("switch jp")) {
 			SetRecognizeLang("ja-JP")
-		} else if(Result.includes("切換英文")) {
+		} else if(Result.includes("切換英文")) || Result.includes("アメリカ"){
 			SetRecognizeLang("en-US")
-		} else if(Result.includes("switch tw")) {
+		} else if(Result.includes("switch tw") || Result.includes("台湾")) {
 			SetRecognizeLang("zh-TW")
 		} else {
 			document.getElementById("title").innerHTML = "Easy Control";
