@@ -55,7 +55,7 @@ html {
 }
 .analogListenclass{
 	display: block;
-	width: auto;
+	width: 120px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	margin: 0 auto;
