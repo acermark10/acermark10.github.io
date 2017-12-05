@@ -130,8 +130,8 @@
 		console.log('r = ' + r);
 		console.log('g = ' + g);
 		console.log('b = ' + b);
-		cpf.request('["grove_setColorRGB", 0, r, g, b],["sleep", 300]');
-		
+		cpf.request('["grove_setColorRGB", 0, r, g, b],["sleep", 300], ["grove_setColorRGB", 0, 0, 255, 255]');
+		//cpf.request('["grove_setColorRGB", 0, 255, 255, 255]'); 
 		//if(cpf)
 		//	cpf.initSpeechRecognition(); 
 	}
