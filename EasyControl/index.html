@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlee</font><p><br>
+<font id="title">Easy Controlff</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -112,29 +112,12 @@
 		if(cpf)
 			cpf.setPinMode('["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1,"INPUT"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["grove_newChainableLED", 7, 8, 1]'); 
 			//document.getElementById("demo").innerHTML += ret + "<br>";
-		console.log('setup completed ');
 	}
 	
 	// Init Speech Recognition
 	function initSpeechRecognition(){
-		var col = colourRandom();
-		console.log('col = ' + col);
-		
-		if(col.charAt(0) == '#') {
-			col = col.substr(1);
-			console.log('col = ' + col);
-		}	
-		r = parseInt(col.charAt(0)+col.charAt(1), 16);
-		g = parseInt(col.charAt(2)+col.charAt(3), 16);
-		b = parseInt(col.charAt(4)+col.charAt(5), 16);
-		
-		console.log('r = ' + r);
-		console.log('g = ' + g);
-		console.log('b = ' + b);
-		cpf.request('["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']');
-
-		//if(cpf)
-		//	cpf.initSpeechRecognition(); 
+		if(cpf)
+			cpf.initSpeechRecognition(); 
 	}
 	initSpeechRecognition();
 		
@@ -210,26 +193,24 @@
 				//cpf.request(S2);
 				//cpf.request(S3);
 				
-				//cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
-				//var why ='["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]';
-				//console.log('old = ' + why);
-				var m = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
-				var n = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
-				var o = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
-				console.log('m = ' + m);
-				console.log('n = ' + n);
-				console.log('o = ' + o);
+
+				//var m = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
+				//var n = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
+				//var o = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;  
+				//console.log('m = ' + m);
+				//console.log('n = ' + n);
+				//console.log('o = ' + o);
 				//cpf.request('["grove_setColorRGB", 0, m, n, o], ["tone_play", 6, 261, 300], ["sleep", 300],["grove_setColorRGB", 0, n, m, o], ["tone_play", 6, 261, 300], ["sleep", 300], ["grove_setColorRGB", 0, o, o, n],["tone_play", 6, 392, 300],["sleep", 300],["grove_setColorRGB", 0, m, n, m],["tone_play", 6, 392, 300],["sleep", 300],["grove_setColorRGB", 0, n, o, o],["tone_play", 6, 440, 300], ["sleep", 300], ["grove_setColorRGB", 0, o, n, m], ["tone_play", 6, 440, 300],["sleep", 300], ["grove_setColorRGB", 0, m, n, m], ["tone_play", 6, 392, 300],["sleep", 500]'); 
  
-				cpf.request('["tone_play", 6, 261, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, 255, 0, 0], ["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 500]'); 
+				//cpf.request('["tone_play", 6, 261, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, 255, 0, 0], ["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, 0, 0, 255],["sleep", 500]'); 
 				
 				//correct
-				//cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
-				//cpf.request('["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 500]'); 
-				//cpf.request('["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 500]'); 
-				//cpf.request('["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300], ["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 500]'); 
-				//cpf.request('["tone_play", 6, 261, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 300], ["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 440, 300],["sleep", 300],["tone_play", 6, 392, 300],["sleep", 500]'); 
-				//cpf.request('["tone_play", 6, 349, 300],["sleep", 300],["tone_play", 6, 349, 300],["sleep", 300], ["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 329, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 293, 300],["sleep", 300],["tone_play", 6, 261, 300],["sleep", 500]'); 
+				cpf.request('["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
 				//SetColorLight();
 				
 			}
