@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Controlbb</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -197,7 +197,26 @@
 			console.log('Sing ' + Result);
 			document.getElementById("title").innerHTML = Result;
 			
-			if(cpf) {//+','+So
+			if(cpf) {
+				
+				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.sleep(500);
+				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.sleep(500);
+				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.sleep(500);
+				cpf.request('["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.sleep(500);
+				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.sleep(500);
+				cpf.request('["tone_play", 6, 293, 500],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.sleep(200);
+				cpf.request('["tone_play", 6, 392, 500],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('["grove_setColorRGB", 0, 0, 0, 0]'); 
+				
+				
+				
+				
 				//5 5 4 1 5 5 6 4 
 				var S1 = So+','+So+','+Fa+','+Do+','+So+','+So+','+La+','+Fa;
 				//2 2 5 5 6 4 2 3 4 3 2 
@@ -208,13 +227,13 @@
 				var S4 = Fa+','+Mi+','+Fa+','+Mi+','+Mi+','+Fa+','+Mi+','+Do;
 				//var S5 = Do+','+Do+','+So+','+So+','+La+','+La+','+So;
 				//var S6 = Fa+','+Fa+','+Mi+','+Mi+','+Re+','+Re+','+Do;
-				cpf.request(S1);
+				//cpf.request(S1);
 				cpf.sleep(500);
-				cpf.request(S2);
+				//cpf.request(S2);
 				cpf.sleep(500);
-				cpf.request(S3);
+				//cpf.request(S3);
 				cpf.sleep(500);
-				cpf.request(S4);
+				//cpf.request(S4);
 			}
 		} else if(Result.includes("切換日文") || Result.includes("switch jp")) {
 			SetRecognizeLang("ja-JP")
