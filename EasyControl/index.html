@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control</font><p><br>
+<font id="title">Easy Controlaa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -230,6 +230,10 @@
 			SetSpeech("off")
 		} else if(!Result.localeCompare("朗讀")) {
 			SetSpeech("on")
+		} else if(!Result.localeCompare("現在天氣")) {
+			GetCurrentWeather()
+		} else if(!Result.localeCompare("現在時間")) {
+			GetCurrentTime()
 		} else {
 			document.getElementById("title").innerHTML = "Easy Control";
 		}
@@ -246,6 +250,20 @@
 		console.log('SetSpeech Switch = ' + Switch);
 		if(cpf)
 			cpf.SetSpeech(Switch); 
+	}
+	
+	// Get current weather
+	function GetCurrentWeather() {
+		console.log('Get time');
+		if(cpf)
+			cpf.GetCurrentWeather(Switch); 
+	}
+	
+		// Get current weather
+	function GetCurrentTime() {
+		console.log('Get weather');
+		if(cpf)
+			cpf.GetCurrentTime(Switch); 
 	}
 	
 	function getrandom(){
