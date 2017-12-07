@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Control</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -166,13 +166,13 @@
 				//cpf.request('["digitalWrite", 2 , 0]'); // turn off 
 				document.getElementById("title").innerHTML = "Turn off light";
 			}
-	       	} else if (Result.includes("臥室開風扇")) {
+	       	} else if (Result.includes("房間開風扇")) {
 	       		if(cpf) {
 
 				cpf.request('["analogWrite", 3, 120]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on fan";
 			}
-	       	} else if (Result.includes("臥室關風扇")) {
+	       	} else if (Result.includes("房間關風扇")) {
 	       		if(cpf) {
 
 				cpf.request('["analogWrite", 3, 0]'); // turn off 
