@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlbb</font><p><br>
+<font id="title">Easy Controlaa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -156,7 +156,8 @@
 		x.innerHTML = Result;
                	if(Result.includes("開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
-				cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
+				cpf.request('ttyACM1', '["digitalWrite", 2 , 1]'); // turn on 
+				cpf.request('["digitalWrite", 2 , 1]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on light";
 			}
 	       	} else if (Result.includes("turn off") || Result.includes("關燈")) {
