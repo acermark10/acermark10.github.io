@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlbb</font><p><br>
+<font id="title">Easy Controlcc</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -162,6 +162,7 @@
 			}
 	       	} else if (Result.includes("turn off") || Result.includes("關燈")) {
 	       		if(cpf) {
+				cpf.request('ttyACM0', '["digitalWrite", 2 , 0]'); // turn of 
 				cpf.request('["digitalWrite", 2 , 0]'); // turn off 
 				document.getElementById("title").innerHTML = "Turn off light";
 			}
