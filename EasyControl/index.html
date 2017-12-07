@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Control</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -117,7 +117,7 @@
 	// cpf setup
 	function setup(){
 		if(cpf)
-			cpf.setPinMode('["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1,"INPUT"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["grove_newChainableLED", 7, 8, 1]'); 
+			cpf.setPinMode('["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1,"INPUT"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 
 			//document.getElementById("demo").innerHTML += ret + "<br>";
 	}
 	
@@ -154,17 +154,29 @@
 		
 		var x = document.getElementById("Recog-icon");
 		x.innerHTML = Result;
-               	if(Result.includes("開燈") || Result.includes("turn on")) {
+               	if(Result.includes("客廳開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
 				cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('["digitalWrite", 2 , 1]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on light";
 			}
-	       	} else if (Result.includes("turn off") || Result.includes("關燈")) {
+	       	} else if (Result.includes("turn off") || Result.includes("客廳關燈")) {
 	       		if(cpf) {
 				cpf.request('ttyACM0', '["digitalWrite", 2 , 0]'); // turn of 
 				//cpf.request('["digitalWrite", 2 , 0]'); // turn off 
 				document.getElementById("title").innerHTML = "Turn off light";
+			}
+	       	} else if (Result.includes("臥室開風扇")) {
+	       		if(cpf) {
+
+				cpf.request('["analogWrite", 6, 120]'); // turn on 
+				document.getElementById("title").innerHTML = "Turn on fan";
+			}
+	       	} else if (Result.includes("臥室關風扇")) {
+	       		if(cpf) {
+
+				cpf.request('["analogWrite", 6, 0]'); // turn off 
+				document.getElementById("title").innerHTML = "Turn off fan";
 			}
 	       	} else if(Result.includes("小星星")) { // Sing little star
 			console.log('Sing ' + Result);
