@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlcc</font><p><br>
+<font id="title">Easy Controlaa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -170,7 +170,7 @@
 	       		if(cpf) {
 
 				//cpf.request('ttyACM0', '["analogWrite", 3, 255]'); // turn on
-				cpf.request('ttyACM1', '["analogWrite", 3, 255]'); // turn on
+				cpf.request('ttyACM0', '["analogWrite", 3, 255]'); // turn on
 				//cpf.request('["analogWrite", 3, 120]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on fan";
 			}
@@ -178,7 +178,7 @@
 	       		if(cpf) {
 
 				//cpf.request('ttyACM0', '["analogWrite", 3, 0]'); // turn off
-				cpf.request('ttyACM1', '["analogWrite", 3, 0]'); // turn off
+				cpf.request('ttyACM0', '["analogWrite", 3, 0]'); // turn off
 				//cpf.request('["analogWrite", 3, 0]'); // turn off 
 				document.getElementById("title").innerHTML = "Turn off fan";
 			}
