@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Control</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -169,13 +169,15 @@
 	       	} else if (Result.includes("房間開風扇")) {
 	       		if(cpf) {
 
-				cpf.request('["analogWrite", 3, 120]'); // turn on 
+				cpf.request('ttyACM0', '["analogWrite", 3, 255]'); // turn on
+				//cpf.request('["analogWrite", 3, 120]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on fan";
 			}
 	       	} else if (Result.includes("房間關風扇")) {
 	       		if(cpf) {
 
-				cpf.request('["analogWrite", 3, 0]'); // turn off 
+				cpf.request('ttyACM0', '["analogWrite", 3, 0]'); // turn off
+				//cpf.request('["analogWrite", 3, 0]'); // turn off 
 				document.getElementById("title").innerHTML = "Turn off fan";
 			}
 	       	} else if(Result.includes("小星星")) { // Sing little star
