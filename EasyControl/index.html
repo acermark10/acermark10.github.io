@@ -160,16 +160,16 @@
 	       		if(cpf) {
 				cpf.request('ttyACM1', '["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('["digitalWrite", 2 , 1]'); // turn on 
-				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 255, 0, 0]'); 
-				cpf.request('ttyACM1', '["grove_setColorRGB", 0, 255, 0, 0]'); 
+				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 110, 110, 110]'); 
+				cpf.request('ttyACM1', '["grove_setColorRGB", 0, 110, 110, 110]'); 
 				document.getElementById("title").innerHTML = "Turn on light";
 			}
 	       	} else if (Result.includes("turn off") || Result.includes("關燈")) {
 	       		if(cpf) {
 				cpf.request('ttyACM1', '["digitalWrite", 2 , 0]'); // turn of 
 				//cpf.request('["digitalWrite", 2 , 0]'); // turn off 
-				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 255]'); 
-				cpf.request('ttyACM1', '["grove_setColorRGB", 0, 0, 0, 255]'); 
+				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 210, 210, 210]'); 
+				cpf.request('ttyACM1', '["grove_setColorRGB", 0, 210, 210, 210]'); 
 				document.getElementById("title").innerHTML = "Turn off light";
 			}
 	       	} else if (Result.includes("房間開風扇")) {
