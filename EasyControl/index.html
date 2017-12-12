@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Controlbb</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -62,7 +62,7 @@
 	var tempdata;
 	var celsius;
 	var Pressure;
-	var SR03;
+	
 	
 	setup();
 	var maxNum = 255;  
@@ -87,7 +87,7 @@
 			//document.getElementById("temperaturevalue").innerHTML = celsius;
 			
 			//Pressure = cpf.get("a0");
-			SR03 = cpf.get("a2");
+			var SR03 = cpf.get("a2");
 			//console.log('Pressure = ' + Pressure);
 			console.log('SR03 = ' + SR03);
 		}
