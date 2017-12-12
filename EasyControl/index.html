@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controldd</font><p><br>
+<font id="title">Easy Controlaa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -349,15 +349,26 @@
 	function catchthief() {
 		cpf.request('ttyACM0', '["digitalWrite", 2 , 1]');
 		cpf.request('ttyACM1', '["digitalWrite", 2 , 1]');
-		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 255,0,0']'); 
-		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 255,0,0']'); 
+		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 255,0,0"]'); 
+		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 255,0,0"]'); 
+		alarm();	    
 	}
 	
 	function nothing() {
 		cpf.request('ttyACM0', '["digitalWrite", 2 , 0]');
 		cpf.request('ttyACM1', '["digitalWrite", 2 , 0]');
-		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0,0,0']'); 
-		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 0,0,0']'); 
+		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0,0,0"]'); 
+		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 0,0,0"]'); 
+		disablealarm();
+	}
+	
+	function alarm() {
+		cpf.request('["tone_play", 6, 1046, 300]'); 
+		setTimeout(alarm, 300);
+	}
+	
+	function disablealarm() {
+		cpf.request('["tone_stop", 6]'); 
 	}
 	
 </script>
