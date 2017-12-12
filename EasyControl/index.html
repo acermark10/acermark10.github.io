@@ -166,7 +166,7 @@
 		x.innerHTML = Result;
                	if(Result.includes("客廳開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
-				cpf.request('ttyACM1', '["digitalWrite", 2 , 1]'); // turn on 
+				cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('ttyACM0', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
@@ -174,7 +174,7 @@
 			}
 	       	} else if (Result.includes("turn off") || Result.includes("客廳關燈")) {
 	       		if(cpf) {
-				cpf.request('ttyACM1', '["digitalWrite", 2 , 0]'); // turn of 
+				cpf.request('ttyACM0', '["digitalWrite", 2 , 0]'); // turn of 
 				//cpf.request('["digitalWrite", 2 , 0]'); // turn off 
 				//cpf.request('ttyACM0', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
@@ -182,19 +182,19 @@
 			}
 	       	} else if(Result.includes("房間開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
-				cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
+				cpf.request('ttyACM1', '["digitalWrite", 2 , 1]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on room light";
 			}
 	       	} else if (Result.includes("turn off") || Result.includes("房間關燈")) {
 	       		if(cpf) {
-				cpf.request('ttyACM0', '["digitalWrite", 2 , 0]'); // turn of 
+				cpf.request('ttyACM1', '["digitalWrite", 2 , 0]'); // turn of 
 				document.getElementById("title").innerHTML = "Turn off room light";
 			}
 	       	} else if (Result.includes("房間開風扇")) {
 	       		if(cpf) {
 
 				//cpf.request('ttyACM0', '["analogWrite", 3, 255]'); // turn on
-				cpf.request('ttyACM0', '["analogWrite", 3, 255]'); // turn on
+				cpf.request('ttyACM1', '["analogWrite", 3, 255]'); // turn on
 				//cpf.request('["analogWrite", 3, 120]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on fan";
 			}
@@ -202,7 +202,7 @@
 	       		if(cpf) {
 
 				//cpf.request('ttyACM0', '["analogWrite", 3, 0]'); // turn off
-				cpf.request('ttyACM0', '["analogWrite", 3, 0]'); // turn off
+				cpf.request('ttyACM1', '["analogWrite", 3, 0]'); // turn off
 				//cpf.request('["analogWrite", 3, 0]'); // turn off 
 				document.getElementById("title").innerHTML = "Turn off fan";
 			}
@@ -347,17 +347,17 @@
 	}
 	
 	function catchthief() {
-		cpf.request('ttyACM0', '["digitalWrite", 2 , 1]');
+		//cpf.request('ttyACM0', '["digitalWrite", 2 , 1]');
 		cpf.request('ttyACM1', '["digitalWrite", 2 , 1]');
-		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 255, 0, 0]'); 
+		//cpf.request('ttyACM0', '["grove_setColorRGB", 0, 255, 0, 0]'); 
 		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 255, 0, 0]'); 
 		alarm();	    
 	}
 	
 	function nothing() {
-		cpf.request('ttyACM0', '["digitalWrite", 2 , 0]');
+		//cpf.request('ttyACM0', '["digitalWrite", 2 , 0]');
 		cpf.request('ttyACM1', '["digitalWrite", 2 , 0]');
-		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+		//cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		disablealarm();
 	}
