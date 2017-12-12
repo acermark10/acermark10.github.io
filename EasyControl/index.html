@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlcc</font><p><br>
+<font id="title">Easy Controldd</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -349,11 +349,15 @@
 	function catchthief() {
 		cpf.request('ttyACM0', '["digitalWrite", 2 , 1]');
 		cpf.request('ttyACM1', '["digitalWrite", 2 , 1]');
+		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 255,0,0']'); 
+		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 255,0,0']'); 
 	}
 	
 	function nothing() {
 		cpf.request('ttyACM0', '["digitalWrite", 2 , 0]');
 		cpf.request('ttyACM1', '["digitalWrite", 2 , 0]');
+		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0,0,0']'); 
+		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 0,0,0']'); 
 	}
 	
 </script>
