@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Controlbb</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -87,10 +87,10 @@
 			document.getElementById("temperaturevalue").innerHTML = celsius;
 			//document.getElementById("Recog-icon").innerHTML = recdata;
 			
-			//Pressure = cpf.get("a0");
-			//SR03 = cpf.get("a2");
-			//console.log('Pressure = ' + Pressure);
-			//console.log('SR03 = ' + SR03);
+			Pressure = cpf.get("a0");
+			SR03 = cpf.get("a2");
+			console.log('Pressure = ' + Pressure);
+			console.log('SR03 = ' + SR03);
 		}
 		setTimeout(loop, 1000);
 	}
