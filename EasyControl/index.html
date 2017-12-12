@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Controlbb</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -62,6 +62,8 @@
 	var tempdata;
 	var celsius;
 	var Pressure;
+	var SR03;
+	
 	setup();
 	var maxNum = 255;  
 	var minNum = 0;  
@@ -85,7 +87,9 @@
 			document.getElementById("temperaturevalue").innerHTML = celsius;
 			//document.getElementById("Recog-icon").innerHTML = recdata;
 			Pressure = cpf.get("a0");
+			SR03 = cpf.get("a2");
 			console.log('Pressure = ' + Pressure);
+			console.log('SR03 = ' + SR03);
 		}
 		setTimeout(loop, 1000);
 	}
@@ -120,8 +124,8 @@
 	// cpf setup
 	function setup(){
 		if(cpf) {
-			cpf.setPinMode('ttyACM0', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1,"INPUT"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 
-		        cpf.setPinMode('ttyACM1', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1,"INPUT"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 	
+			cpf.setPinMode('ttyACM0', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1,"INPUT"], ["setPinMode", "analog", 2, "SR03"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 
+		        cpf.setPinMode('ttyACM1', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1,"INPUT"], ["setPinMode", "analog", 2, "SR03"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 	
 			//document.getElementById("demo").innerHTML += ret + "<br>";
 		}
 	}
