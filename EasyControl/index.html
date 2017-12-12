@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlbb</font><p><br>
+<font id="title">Easy Controlcc</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -79,12 +79,12 @@
 	function loop() {
 		if(cpf){
 	
-			lightdata = cpf.get("light sensor");
-			tempdata = cpf.get("temperature sensor");
-			recdata = cpf.get("Speech Rec Result", 1);
-			celsius = toCelsius(tempdata);	
-			document.getElementById("lightvalue").innerHTML = lightdata;
-			document.getElementById("temperaturevalue").innerHTML = celsius;
+			//lightdata = cpf.get("light sensor");
+			//tempdata = cpf.get("temperature sensor");
+			//recdata = cpf.get("Speech Rec Result", 1);
+			//celsius = toCelsius(tempdata);	
+			//document.getElementById("lightvalue").innerHTML = lightdata;
+			//document.getElementById("temperaturevalue").innerHTML = celsius;
 			
 			//Pressure = cpf.get("a0");
 			SR03 = cpf.get("a2");
@@ -93,7 +93,7 @@
 		}
 		setTimeout(loop, 1000);
 	}
-	//loop();
+	loop();
 	
 	// RGB
 	function changeColor() {
