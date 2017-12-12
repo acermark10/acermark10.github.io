@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlbb</font><p><br>
+<font id="title">Easy Controlcc</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -62,7 +62,7 @@
 	var tempdata;
 	var celsius;
 	var Pressure;
-	
+	var SR03 = 100;
 	
 	setup();
 	var maxNum = 255;  
@@ -87,7 +87,7 @@
 			//document.getElementById("temperaturevalue").innerHTML = celsius;
 			
 			//Pressure = cpf.get("a0");
-			var SR03 = cpf.get("a2");
+			SR03 = cpf.get("a2");
 			//console.log('Pressure = ' + Pressure);
 			console.log('SR03 = ' + SR03);
 		}
@@ -165,7 +165,8 @@
 		x.innerHTML = Result;
                	if(Result.includes("客廳開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
-				cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
+				//cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
+				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 170, 170]'); 
 				//cpf.request('["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('ttyACM0', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
@@ -308,6 +309,8 @@
 			GetCurrentTime()
 		} else if(!Result.localeCompare("沒事沒事")) {
 			nothing()
+		} else if(!Result.localeCompare("啟動防盜系統")) {
+			cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		} else {
 			document.getElementById("title").innerHTML = "Easy Control";
 		}
