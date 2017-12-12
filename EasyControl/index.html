@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlbb</font><p><br>
+<font id="title">Easy Controlcc</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -86,10 +86,11 @@
 			document.getElementById("lightvalue").innerHTML = lightdata;
 			document.getElementById("temperaturevalue").innerHTML = celsius;
 			//document.getElementById("Recog-icon").innerHTML = recdata;
-			Pressure = cpf.get("a0");
-			SR03 = cpf.get("a2");
-			console.log('Pressure = ' + Pressure);
-			console.log('SR03 = ' + SR03);
+			
+			//Pressure = cpf.get("a0");
+			//SR03 = cpf.get("a2");
+			//console.log('Pressure = ' + Pressure);
+			//console.log('SR03 = ' + SR03);
 		}
 		setTimeout(loop, 1000);
 	}
@@ -306,6 +307,8 @@
 			GetCurrentWeather()
 		} else if(!Result.localeCompare("現在時間")) {
 			GetCurrentTime()
+		} else if(!Result.localeCompare("沒事沒事")) {
+			nothing()
 		} else {
 			document.getElementById("title").innerHTML = "Easy Control";
 		}
@@ -331,17 +334,28 @@
 			cpf.GetCurrentWeather(); 
 	}
 	
-		// Get current weather
+	// Get current weather
 	function GetCurrentTime() {
 		console.log('Get time');
 		if(cpf)
 			cpf.GetCurrentTime(); 
 	}
 	
-	function getrandom(){
+	function getrandom() {
 		var ret = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 		return ret;
 	}
+	
+	function catchthief() {
+		cpf.request('ttyACM0', '["digitalWrite", 2 , 1]');
+		cpf.request('ttyACM1', '["digitalWrite", 2 , 1]');
+	}
+	
+	function nothing() {
+		cpf.request('ttyACM0', '["digitalWrite", 2 , 0]');
+		cpf.request('ttyACM1', '["digitalWrite", 2 , 0]');
+	}
+	
 </script>
 </body>
 </html>
