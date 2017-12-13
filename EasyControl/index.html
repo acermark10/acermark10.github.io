@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlbb</font><p><br>
+<font id="title">Easy Controlaa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -362,12 +362,12 @@
 		//cpf.request('ttyACM1', '["digitalWrite", 2 , 0]');
 		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
-		disablealarm();
+		//disablealarm();
 	}
 	
 	function alarm() {
 		console.log(alarm);
-		cpf.request('ttyACM1', '["tone_play", 6, 523, 100]'); 
+		cpf.request('ttyACM1', '["tone_play", 6, 523, 300]'); 
 		
 		//setTimeout(alarm, 300);
 	}
