@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Controlbb</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -79,12 +79,12 @@
 	function loop() {
 		if(cpf){
 	
-			//lightdata = cpf.get("light sensor");
-			//tempdata = cpf.get("temperature sensor");
+			lightdata = cpf.get("light sensor");
+			tempdata = cpf.get("temperature sensor");
 			//recdata = cpf.get("Speech Rec Result", 1);
-			//celsius = toCelsius(tempdata);	
-			//document.getElementById("lightvalue").innerHTML = lightdata;
-			//document.getElementById("temperaturevalue").innerHTML = celsius;
+			celsius = toCelsius(tempdata);	
+			document.getElementById("lightvalue").innerHTML = lightdata;
+			document.getElementById("temperaturevalue").innerHTML = celsius;
 			
 			//Pressure = cpf.get("a0");
 			SR03 = cpf.get("a2");
@@ -174,7 +174,8 @@
 			}
 	       	} else if (Result.includes("turn off") || Result.includes("客廳關燈")) {
 	       		if(cpf) {
-				cpf.request('ttyACM0', '["digitalWrite", 2 , 0]'); // turn of 
+				//cpf.request('ttyACM0', '["digitalWrite", 2 , 0]'); // turn of 
+				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 				//cpf.request('["digitalWrite", 2 , 0]'); // turn off 
 				//cpf.request('ttyACM0', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
@@ -182,11 +183,15 @@
 			}
 	       	} else if(Result.includes("房間開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
+				
+				cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
 				cpf.request('ttyACM1', '["digitalWrite", 2 , 1]'); // turn on 
+				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 255, 0]'); 
 				document.getElementById("title").innerHTML = "Turn on room light";
 			}
 	       	} else if (Result.includes("turn off") || Result.includes("房間關燈")) {
 	       		if(cpf) {
+				cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
 				cpf.request('ttyACM1', '["digitalWrite", 2 , 0]'); // turn of 
 				document.getElementById("title").innerHTML = "Turn off room light";
 			}
