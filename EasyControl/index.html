@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlcc</font><p><br>
+<font id="title">Easy Controlaa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -351,7 +351,7 @@
 	function catchthief() {
 		//cpf.request('ttyACM0', '["digitalWrite", 2 , 1]');
 		cpf.request('ttyACM1', '["digitalWrite", 2 , 1]');
-		//cpf.request('ttyACM0', '["grove_setColorRGB", 0, 255, 0, 0]'); 
+		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 255, 0, 0]'); 
 		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 255, 0, 0]'); 
 		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		alarm();	    
@@ -367,7 +367,7 @@
 	
 	function alarm() {
 		console.log(alarm);
-		cpf.request('ttyACM1', '["tone_play", 6, 523, 300]'); 
+		cpf.request('ttyACM1', '["tone_play", 6, 523, 400]'); 
 		
 		//setTimeout(alarm, 300);
 	}
