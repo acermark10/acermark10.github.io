@@ -165,8 +165,8 @@
 		x.innerHTML = Result;
                	if(Result.includes("turn on") || Result.includes("客廳開燈")) {
 	       		if(cpf) {
-				//cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
-				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 170, 170]'); 
+				cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
+				//cpf.request('board1', '["grove_setColorRGB", 0, 0, 170, 170]'); 
 				//cpf.request('["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('ttyACM0', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
@@ -174,8 +174,8 @@
 			}
 	       	} else if (Result.includes("客廳關燈") || Result.includes("turn off")) {
 	       		if(cpf) {
-				//cpf.request('ttyACM0', '["digitalWrite", 2 , 0]'); // turn of 
-				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+				cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn of 
+				//cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 				//cpf.request('["digitalWrite", 2 , 0]'); // turn off 
 				//cpf.request('ttyACM0', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
@@ -184,22 +184,22 @@
 	       	} else if(Result.includes("房間開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
 				
-				cpf.request('ttyACM0', '["digitalWrite", 2 , 1]'); // turn on 
-				cpf.request('ttyACM1', '["digitalWrite", 2 , 1]'); // turn on 
-				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 255, 0]'); 
+				cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
+				cpf.request('board2', '["digitalWrite", 2 , 1]'); // turn on 
+				cpf.request('board1', '["grove_setColorRGB", 0, 0, 255, 0]'); 
 				document.getElementById("title").innerHTML = "Turn on room light";
 			}
 	       	} else if (Result.includes("房間關燈") || Result.includes("turn off")) {
 	       		if(cpf) {
-				cpf.request('ttyACM0', '["digitalWrite", 2 , 0]'); // turn on 
-				cpf.request('ttyACM1', '["digitalWrite", 2 , 0]'); // turn of 
+				cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn on 
+				cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn of 
 				document.getElementById("title").innerHTML = "Turn off room light";
 			}
 	       	} else if (Result.includes("房間開風扇")) {
 	       		if(cpf) {
 
 				//cpf.request('ttyACM0', '["analogWrite", 3, 255]'); // turn on
-				cpf.request('ttyACM1', '["analogWrite", 3, 255]'); // turn on
+				cpf.request('board2', '["analogWrite", 3, 255]'); // turn on
 				//cpf.request('["analogWrite", 3, 120]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on fan";
 			}
@@ -207,7 +207,7 @@
 	       		if(cpf) {
 
 				//cpf.request('ttyACM0', '["analogWrite", 3, 0]'); // turn off
-				cpf.request('ttyACM1', '["analogWrite", 3, 0]'); // turn off
+				cpf.request('board2', '["analogWrite", 3, 0]'); // turn off
 				//cpf.request('["analogWrite", 3, 0]'); // turn off 
 				document.getElementById("title").innerHTML = "Turn off fan";
 			}
@@ -234,13 +234,13 @@
 
 				//cpf.request('["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
 				
-				cpf.request('ttyACM0', '["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
-				cpf.request('ttyACM0', '["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
-				cpf.request('ttyACM0', '["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
-				cpf.request('ttyACM0', '["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
-				cpf.request('ttyACM0', '["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
-				cpf.request('ttyACM0', '["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
-				cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+				cpf.request('board1', '["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 				// Correct
 				//cpf.request('["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 440, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
 				//cpf.request('["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
@@ -256,22 +256,22 @@
 			
 			if(cpf) {
 				
-				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
 				//cpf.sleep(500);
-				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
 				//cpf.sleep(500);
-				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300]'); 
+				cpf.request('board1', '["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 392, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 261, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300]'); 
 				//cpf.sleep(500);
-				cpf.request('["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300]'); 
+				cpf.request('board1', '["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 349, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300]'); 
 				//cpf.sleep(500);
-				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 293, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
 				//cpf.sleep(500);
-				cpf.request('["tone_play", 6, 293, 500],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 293, 500],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
 				//cpf.sleep(200);
-				cpf.request('["tone_play", 6, 392, 500],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
-				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
-				cpf.request('["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
-				cpf.request('["grove_setColorRGB", 0, 0, 0, 0]'); 
+				cpf.request('board1', '["tone_play", 6, 392, 500],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
+				cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 				
 				
 				
@@ -315,7 +315,7 @@
 		} else if(!Result.localeCompare("沒事沒事")) {
 			nothing()
 		} else if(!Result.localeCompare("啟動防盜系統")) {
-			cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		} else {
 			document.getElementById("title").innerHTML = "Easy Control";
 		}
@@ -356,23 +356,23 @@
 	function catchthief() {
 		//cpf.request('ttyACM0', '["digitalWrite", 2 , 1]');
 		//cpf.request('ttyACM1', '["digitalWrite", 2 , 1]');
-		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 255, 0, 0]'); 
-		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 255, 0, 0]'); 
-		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+		cpf.request('board1', '["grove_setColorRGB", 0, 255, 0, 0]'); 
+		cpf.request('board2', '["grove_setColorRGB", 0, 255, 0, 0]'); 
+		cpf.request('board2', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		alarm();	    
 	}
 	
 	function nothing() {
 		//cpf.request('ttyACM0', '["digitalWrite", 2 , 0]');
 		//cpf.request('ttyACM1', '["digitalWrite", 2 , 0]');
-		cpf.request('ttyACM0', '["grove_setColorRGB", 0, 0, 0, 0]'); 
-		cpf.request('ttyACM1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+		cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+		cpf.request('board2', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		//disablealarm();
 	}
 	
 	function alarm() {
 		console.log(alarm);
-		cpf.request('ttyACM1', '["tone_play", 6, 523, 300]'); 
+		cpf.request('board2', '["tone_play", 6, 523, 300]'); 
 		
 		//setTimeout(alarm, 300);
 	}
