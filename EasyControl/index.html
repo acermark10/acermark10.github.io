@@ -75,6 +75,11 @@
 	var So = '["tone_play", 6, 784, 300],["sleep", 300]';
 	var La = '["tone_play", 6, 880, 300],["sleep", 300]';
 	
+	
+	var mRed = 0;
+	var mGreen = 0;
+	var mBlue = 0;
+	
 	// Analog
 	function loop() {
 		if(cpf){
@@ -317,11 +322,16 @@
 		} else if(!Result.localeCompare("啟動防盜系統")) {
 			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		} else if(!Result.localeCompare("變紅一些")) {
-			cpf.request('board1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']); 
+			mRed = mRed +20;
+			cpf.request('board1', '["grove_setColorRGB", 0, '+mRed+','+mGreen+','+mBlue+']); 
 		} else if(!Result.localeCompare("變綠一些")) {
-			cpf.request('board1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']); 
+			mGreen = mGreen +20;
+			cpf.request('board1', '["grove_setColorRGB", 0, '+mRed+','+mGreen+','+mBlue+']); 
 		} else if(!Result.localeCompare("變藍一些")) {
-			cpf.request('board1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']); 
+			mBlue = mBlue +20;
+			cpf.request('board1', '["grove_setColorRGB", 0, '+mRed+','+mGreen+','+mBlue+']); 
+		} else if(!Result.localeCompare("燈色重設")) {
+			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		} else {
 			document.getElementById("title").innerHTML = "Easy Control";
 		}
