@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlaa</font><p><br>
+<font id="title">Easy Control</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -330,7 +330,7 @@
 		} else if(!Result.localeCompare("變藍一些")) {
 			mBlue = mBlue +20;
 			cpf.request('board1', '["grove_setColorRGB", 0, '+mRed+','+mGreen+','+mBlue+']'); 
-		} else if(!Result.localeCompare("燈色重設")) {
+		} else if(!Result.localeCompare("燈光重設")) {
 			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		} else {
 			document.getElementById("title").innerHTML = "Easy Control";
