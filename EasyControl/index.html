@@ -316,6 +316,12 @@
 			nothing()
 		} else if(!Result.localeCompare("啟動防盜系統")) {
 			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+		} else if(!Result.localeCompare("變紅一些")) {
+			cpf.request('board1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']); 
+		} else if(!Result.localeCompare("變綠一些")) {
+			cpf.request('board1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']); 
+		} else if(!Result.localeCompare("變藍一些")) {
+			cpf.request('board1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']); 
 		} else {
 			document.getElementById("title").innerHTML = "Easy Control";
 		}
