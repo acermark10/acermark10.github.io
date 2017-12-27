@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control</font><p><br>
+<font id="title">Easy Controlaa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -188,7 +188,6 @@
 			}
 	       	} else if(Result.includes("房間開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
-				
 				cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
 				cpf.request('board2', '["digitalWrite", 2 , 1]'); // turn on 
 				cpf.request('board1', '["grove_setColorRGB", 0, 0, 255, 0]'); 
@@ -278,9 +277,6 @@
 				cpf.request('board1', '["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300],["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 300], ["tone_play", 6, 329, 300],["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+'],["sleep", 500]'); 
 				cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 				
-				
-				
-				
 				//5 5 4 1 5 5 6 4 
 				var S1 = So+','+So+','+Fa+','+Do+','+So+','+So+','+La+','+Fa;
 				//2 2 5 5 6 4 2 3 4 3 2 
@@ -322,13 +318,19 @@
 		} else if(!Result.localeCompare("啟動防盜系統")) {
 			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 		} else if(!Result.localeCompare("變紅一些")) {
-			mRed = mRed +20;
+			mRed = mRed + 20;
+			if (mRed > 255)
+				mRed = 255;
 			cpf.request('board1', '["grove_setColorRGB", 0, '+mRed+','+mGreen+','+mBlue+']'); 
 		} else if(!Result.localeCompare("變綠一些")) {
-			mGreen = mGreen +20;
+			mGreen = mGreen + 20;
+			if (mGreen > 255)
+				mGreen = 255;
 			cpf.request('board1', '["grove_setColorRGB", 0, '+mRed+','+mGreen+','+mBlue+']'); 
 		} else if(!Result.localeCompare("變藍一些")) {
-			mBlue = mBlue +20;
+			mBlue = mBlue + 20;
+			if (mBlue > 255)
+				mBlue = 255;
 			cpf.request('board1', '["grove_setColorRGB", 0, '+mRed+','+mGreen+','+mBlue+']'); 
 		} else if(!Result.localeCompare("燈光重設")) {
 			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
