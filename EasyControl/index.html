@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlbb</font><p><br>
+<font id="title">Easy Controlcc</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -129,7 +129,7 @@
 	// cpf setup
 	function setup(){
 		if(cpf) {
-			cpf.setPinMode('board1', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1, "INPUT"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 
+			cpf.setPinMode('board1', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1, "INPUT"],                                       ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 
 		        cpf.setPinMode('board2', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1, "INPUT"], ["setPinMode", "analog", 2, "INPUT"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 	
 			//document.getElementById("demo").innerHTML += ret + "<br>";
 		}
@@ -188,14 +188,14 @@
 			}
 	       	} else if(Result.includes("房間開燈") || Result.includes("turn on")) {
 	       		if(cpf) {
-				cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
+				//cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
 				cpf.request('board2', '["digitalWrite", 2 , 1]'); // turn on 
-				cpf.request('board1', '["grove_setColorRGB", 0, 0, 255, 0]'); 
+				//cpf.request('board1', '["grove_setColorRGB", 0, 0, 255, 0]'); 
 				document.getElementById("title").innerHTML = "Turn on room light";
 			}
 	       	} else if (Result.includes("房間關燈") || Result.includes("turn off")) {
 	       		if(cpf) {
-				cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn on 
+				//cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn on 
 				cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn of 
 				document.getElementById("title").innerHTML = "Turn off room light";
 			}
