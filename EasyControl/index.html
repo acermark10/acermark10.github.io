@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control</font><p><br>
+<font id="title">Easy ControlQQ</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -132,6 +132,7 @@
 			cpf.setPinMode('board1', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1, "INPUT"],                                       ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 
 		        cpf.setPinMode('board2', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1, "INPUT"], ["setPinMode", "analog", 2, "INPUT"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 	
 			//document.getElementById("demo").innerHTML += ret + "<br>";
+			SetSpeech("", 0.1f, 0.2f)
 		}
 	}
 	
@@ -346,10 +347,12 @@
 	}
 	
 	// Set TexttoSpeech
-	function SetSpeech(Switch) {
-		console.log('SetSpeech Switch = ' + Switch);
+	function SetSpeech(Content, Pitch, SpeechRate) {
+		console.log('SetSpeech Content = ' + Content);
+		console.log('SetSpeech Pitch = ' + Pitch);
+		console.log('SetSpeech SpeechRate = ' + SpeechRate);
 		if(cpf)
-			cpf.SetSpeech(Switch); 
+			cpf.SetSpeech(Content, Pitch, SpeechRate); 
 	}
 	
 	// Get current weather
