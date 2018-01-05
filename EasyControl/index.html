@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlpp</font><p><br>
+<font id="title">Easy Controlaa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -135,6 +135,20 @@
 		}
 	}
 	
+	// Init Face Detection
+	function initFaceDetection(){
+		if(cpf)
+			cpf.initFaceDetection(); 
+	}
+	initFaceDetection();
+	
+	// Get Face Detection Status
+	function GetFaceDetectionStatus(Status) {
+		console.log('Face status = ' + Status);
+		
+	}
+	
+	
 	// Init Speech Recognition
 	function initSpeechRecognition(){
 		if(cpf)
@@ -144,7 +158,7 @@
 		
 	// Get Listener Status
 	function GetRecognitionListenStatus(Status) {
-		console.log('status = ' + Status);
+		console.log('Listen status = ' + Status);
 		var x = document.getElementById("RecListen");
 		if(Status == "true"){
 			//document.getElementById("RecListen").innerHTML='Listening...';
