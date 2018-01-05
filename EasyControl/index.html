@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control</font><p><br>
+<font id="title">Easy Control-a10-aa</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -168,7 +168,7 @@
 		
 		var x = document.getElementById("Recog-icon");
 		x.innerHTML = Result;
-               	if(Result.includes("turn on") || Result.includes("客廳開燈")) {
+               	if(Result.includes("turn on living room") || Result.includes("客廳開燈")) {
 	       		if(cpf) {
 				cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('board1', '["grove_setColorRGB", 0, 0, 170, 170]'); 
@@ -177,29 +177,29 @@
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				document.getElementById("title").innerHTML = "Turn on light";
 			}
-	       	} else if (Result.includes("客廳關燈") || Result.includes("turn off")) {
+	       	} else if (Result.includes("客廳關燈") || Result.includes("turn off living room")) {
 	       		if(cpf) {
-				cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn of 
+				cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
 				//cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 				//cpf.request('["digitalWrite", 2 , 0]'); // turn off 
 				//cpf.request('ttyACM0', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				document.getElementById("title").innerHTML = "Turn off light";
 			}
-	       	} else if(Result.includes("房間開燈") || Result.includes("turn on")) {
+	       	} else if(Result.includes("房間開燈") || Result.includes("turn on room")) {
 	       		if(cpf) {
 				//cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
 				cpf.request('board2', '["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('board1', '["grove_setColorRGB", 0, 0, 255, 0]'); 
 				document.getElementById("title").innerHTML = "Turn on room light";
 			}
-	       	} else if (Result.includes("房間關燈") || Result.includes("turn off")) {
+	       	} else if (Result.includes("房間關燈") || Result.includes("turn off room")) {
 	       		if(cpf) {
 				//cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn on 
 				cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn of 
 				document.getElementById("title").innerHTML = "Turn off room light";
 			}
-	       	} else if (Result.includes("房間開風扇")) {
+	       	} else if (Result.includes("房間開風扇") || Result.includes("turn on room fan")) {
 	       		if(cpf) {
 
 				//cpf.request('ttyACM0', '["analogWrite", 3, 255]'); // turn on
@@ -207,7 +207,7 @@
 				//cpf.request('["analogWrite", 3, 120]'); // turn on 
 				document.getElementById("title").innerHTML = "Turn on fan";
 			}
-	       	} else if (Result.includes("關掉風扇")) {
+	       	} else if (Result.includes("關掉風扇") || Result.includes("turn off room fan")) {
 	       		if(cpf) {
 
 				//cpf.request('ttyACM0', '["analogWrite", 3, 0]'); // turn off
@@ -317,6 +317,12 @@
 			nothing()
 		} else if(!Result.localeCompare("啟動防盜系統")) {
 			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+			cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
+			cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn off 
+		} else if(!Result.localeCompare("start burglary alarm")) {
+			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+			cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
+			cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn off 	
 		} else if(!Result.localeCompare("變紅一些")) {
 			mRed = mRed + 20;
 			if (mRed > 255)
