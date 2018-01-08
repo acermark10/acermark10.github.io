@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control-a10-bett-b</font><p><br>
+<font id="title">Easy Control-a10-bett-a</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -168,7 +168,7 @@
 		
 		var x = document.getElementById("Recog-icon");
 		x.innerHTML = Result;
-               	if(Result.includes("turn on living room") || Result.includes("客廳開燈")) {
+               	if(Result.includes("turn on the light") || Result.includes("客廳開燈")) {
 	       		if(cpf) {
 				//cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
 				cpf.request('board1', '["grove_setColorRGB", 0, 0, 170, 170]'); 
@@ -177,7 +177,7 @@
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				document.getElementById("title").innerHTML = "Turn on light";
 			}
-	       	} else if (Result.includes("客廳關燈") || Result.includes("turn off living room")) {
+	       	} else if (Result.includes("客廳關燈") || Result.includes("turn off the light")) {
 	       		if(cpf) {
 				//cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
 				cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
@@ -186,14 +186,14 @@
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				document.getElementById("title").innerHTML = "Turn off light";
 			}
-	       	} else if(Result.includes("房間開燈") || Result.includes("turn on room")) {
+	       	} else if(Result.includes("房間開燈") || Result.includes("turn on led")) {
 	       		if(cpf) {
 				//cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
 				cpf.request('board2', '["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('board1', '["grove_setColorRGB", 0, 0, 255, 0]'); 
 				document.getElementById("title").innerHTML = "Turn on room light";
 			}
-	       	} else if (Result.includes("房間關燈") || Result.includes("turn off room")) {
+	       	} else if (Result.includes("房間關燈") || Result.includes("turn off led")) {
 	       		if(cpf) {
 				//cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn on 
 				cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn of 
