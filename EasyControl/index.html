@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Controlbb</font><p><br>
+<font id="title">Easy Controlcc</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -360,14 +360,14 @@
 	}
 	
 	// Set TexttoSpeech
-	function SetSpeech(Content, Pitch, SpeechRate) {
+	function SetSpeech(Content, Pitch, SpeechRate, Language) {
 		console.log('SetSpeech Content = ' + Content);
 		console.log('SetSpeech Pitch = ' + Pitch);
 		console.log('SetSpeech SpeechRate = ' + SpeechRate);
 		if(cpf)
-			cpf.SetSpeech(Content, Pitch, SpeechRate); 
+			cpf.SetSpeech(Content, Pitch, SpeechRate, Language); 
 	}
-	SetSpeech("fffff", 0.1, 0.1)
+	SetSpeech("fffff", 0.1, 0.1, "")
 	
 	// Get current weather
 	function GetCurrentWeather() {
