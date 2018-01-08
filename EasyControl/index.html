@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control-a10-bett-a</font><p><br>
+<font id="title">Easy Control-a10-bett-b</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -170,8 +170,8 @@
 		x.innerHTML = Result;
                	if(Result.includes("turn on living room") || Result.includes("客廳開燈")) {
 	       		if(cpf) {
-				cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
-				//cpf.request('board1', '["grove_setColorRGB", 0, 0, 170, 170]'); 
+				//cpf.request('board1', '["digitalWrite", 2 , 1]'); // turn on 
+				cpf.request('board1', '["grove_setColorRGB", 0, 0, 170, 170]'); 
 				//cpf.request('["digitalWrite", 2 , 1]'); // turn on 
 				//cpf.request('ttyACM0', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
@@ -179,8 +179,8 @@
 			}
 	       	} else if (Result.includes("客廳關燈") || Result.includes("turn off living room")) {
 	       		if(cpf) {
-				cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
-				//cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
+				//cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
+				cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 				//cpf.request('["digitalWrite", 2 , 0]'); // turn off 
 				//cpf.request('ttyACM0', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
 				//cpf.request('ttyACM1', '["grove_setColorRGB", 0, '+getrandom()+','+getrandom()+','+getrandom()+']'); 
@@ -319,7 +319,7 @@
 			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 			cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
 			cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn off 
-		} else if(!Result.localeCompare("start burglar alarm")) {
+		} else if(!Result.localeCompare("start alarm")) {
 			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 			cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
 			cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn off 	
