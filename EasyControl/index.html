@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control-a10-bett-a</font><p><br>
+<font id="title">Easy Control-a10-bett-b</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -315,14 +315,10 @@
 			GetCurrentTime()
 		} else if(!Result.localeCompare("沒事沒事") || Result.includes("everything ok")) {
 			nothing()
-		} else if(!Result.localeCompare("啟動防盜系統")) {
+		} else if(!Result.localeCompare("啟動防盜系統") || !Result.localeCompare("start alarm")) {
 			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 			cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
 			cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn off 
-		} else if(!Result.localeCompare("start alarm")) {
-			cpf.request('board1', '["grove_setColorRGB", 0, 0, 0, 0]'); 
-			cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn off 
-			cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn off 	
 		} else if(!Result.localeCompare("變紅一些")) {
 			mRed = mRed + 20;
 			if (mRed > 255)
