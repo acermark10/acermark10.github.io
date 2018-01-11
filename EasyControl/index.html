@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control-a10-bett-d</font><p><br>
+<font id="title">Easy Control-a10-bett-a</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -92,7 +92,7 @@
 			document.getElementById("temperaturevalue").innerHTML = celsius;
 			
 			//Pressure = cpf.get("board1", "a0");
-			SR03 = cpf.get("board1", "a2");
+			SR03 = cpf.get("board1", "d8");
 			//console.log('Pressure = ' + Pressure);
 			//console.log('SR03 = ' + SR03);
 		}
@@ -129,8 +129,8 @@
 	// cpf setup
 	function setup(){
 		if(cpf) {
-			cpf.setPinMode('board1', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1, "INPUT"], ["setPinMode", "analog", 2, "SR03"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 
-		        cpf.setPinMode('board2', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1, "INPUT"], ["setPinMode", "analog", 2, "SR03"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 	
+			cpf.setPinMode('board1', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1, "INPUT"], ["setPinMode", "digital", 8, "SR03"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 
+		        cpf.setPinMode('board2', '["resetPin"], ["setPinMode", "analog", 0, "INPUT"], ["setPinMode", "analog", 1, "INPUT"], ["setPinMode", "digital", 8, "SR03"], ["setPinMode", "digital", 2,"OUTPUT"], ["setPinMode", "digital", 6, "TONE"], ["setPinMode", "digital", 3, "PWM"], ["grove_newChainableLED", 7, 8, 1]'); 	
 			//document.getElementById("demo").innerHTML += ret + "<br>";
 		}
 	}
