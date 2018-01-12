@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control-a10-bett-c</font><p><br>
+<font id="title">Easy Control-a10-bett-a</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -303,6 +303,9 @@
 			document.getElementById("title").innerHTML = Result;
 		} else if(Result.includes("switch tw") || Result.includes("台湾")) {
 			SetRecognizeLang("zh-TW")
+			document.getElementById("title").innerHTML = Result;
+		} else if(Result.includes("切換德文") || Result.includes("switch tw")) {
+			SetRecognizeLang("de-DE")
 			document.getElementById("title").innerHTML = Result;
 		} else if(Result.includes("關閉朗讀")) {
 			cpf.sleep(500);
