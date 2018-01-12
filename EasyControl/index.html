@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control-a10-bett-b</font><p><br>
+<font id="title">Easy Control-a10-bett-c</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -309,9 +309,9 @@
 			SetSpeech("off")
 		} else if(!Result.localeCompare("朗讀")) {
 			SetSpeech("on")
-		} else if(!Result.localeCompare("現在天氣")) {
+		} else if(!Result.localeCompare("現在天氣") || !Result.localeCompare("weather")) {
 			GetCurrentWeather()
-		} else if(!Result.localeCompare("現在時間")) {
+		} else if(!Result.localeCompare("現在時間") || !Result.localeCompare("time")) {
 			GetCurrentTime()
 		} else if(!Result.localeCompare("沒事沒事") || Result.includes("everything ok")) {
 			nothing()
