@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<font id="title">Easy Control-a10-bett-c</font><p><br>
+<font id="title">Easy Control-bett-a</font><p><br>
 
 <div id="content" class="row">
 	<div class="col-sm-12  col-xs-12">
@@ -198,6 +198,7 @@
 	       		if(cpf) {
 				//cpf.request('board1', '["digitalWrite", 2 , 0]'); // turn on 
 				cpf.request('board2', '["digitalWrite", 2 , 0]'); // turn of 
+				cpf.request('board2', '["grove_setColorRGB", 0, 0, 0, 0]'); 
 				document.getElementById("title").innerHTML = "Turn off room light";
 			}
 	       	} else if (Result.includes("房間開風扇") || Result.includes("turn on room fan")) {
